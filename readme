@@ -1,0 +1,24 @@
+Multi-Region Attention-Assisted Grounding of Natural Language Queries at Phrase Level
+
+Installation:
+- Download MAGnet folder from https://drive.google.com/file/d/1Ul2vGySexC3GfHDgdFv_DNfc7UXo8NeV/view?usp=sharing
+    - File contains *.json and glove300d that are used for training and testing the model.
+- Download Flickr30k entities, Refclef, Visual Genome images and put into data/{dataset} folder. Instructions and download links are in the given below:
+	- Flickr30k entities: http://bryanplummer.com/Flickr30kEntities/
+	- Refclef (ReferIt game): https://github.com/lichengunc/refer
+	- Visual Genome (Version 1.2): https://visualgenome.org/api/v0/api_home.html
+- Run "pip3 install -r requirements.txt" to install required packages.
+
+Train:
+- Run "python3 train.py --data_path=/media/dataHD3/MAGnet/data/ --log_path=/media/dataHD3/MAGnet/logs/ --dataset=flickr30k"
+
+Test:
+- Use inspect.ipynb to test the model.
+
+Sourcecode:
+- train.py: main file used to train the model
+- model.py: all model architecture is defined here (adapted from: https://github.com/matterport/Mask_RCNN)
+    - The main class is MAGnet() which define the whole structure of the model.
+- config.py: all configuration of the model.
+- utils.py: helper (adapted from: https://github.com/matterport/Mask_RCNN).
+- visualize.py: helper (adapted from: https://github.com/matterport/Mask_RCNN).
